@@ -1,8 +1,4 @@
 import { useState } from "react";
-
-// ----------------------
-// Custom Hook: useForm
-// ----------------------
 function useForm(initialValues) {
   const [formData, setFormData] = useState(initialValues);
 
@@ -13,7 +9,7 @@ function useForm(initialValues) {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle submit
+  
   const handleSubmit = (callback) => (e) => {
     e.preventDefault();
     console.log("[FORM SUBMITTED]:", formData);
@@ -23,9 +19,7 @@ function useForm(initialValues) {
   return { formData, handleChange, handleSubmit };
 }
 
-// ----------------------
-// Main App
-// ----------------------
+
 export default function App() {
   // Registration Form using the hook
   const registerForm = useForm({
@@ -34,7 +28,7 @@ export default function App() {
     password: "",
   });
 
-  // Login Form using the same hook (Reusability)
+
   const loginForm = useForm({
     email: "",
     password: "",
