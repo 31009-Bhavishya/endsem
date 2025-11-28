@@ -2,7 +2,7 @@ import { useState } from "react";
 function useForm(initialValues) {
   const [formData, setFormData] = useState(initialValues);
 
-  // Track input changes
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(`[INPUT CHANGE] ${name}: ${value}`);
@@ -21,7 +21,7 @@ function useForm(initialValues) {
 
 
 export default function App() {
-  // Registration Form using the hook
+
   const registerForm = useForm({
     name: "",
     email: "",
